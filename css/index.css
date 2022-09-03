@@ -60,6 +60,21 @@ a:hover {
   color: white !important;
 }
 
+.info {
+  background-color: #138496 !important;
+  color: white !important;
+}
+
+.light {
+  background-color: #e2e6ea !important;
+  color: black !important;
+}
+
+.dark {
+  background-color: #23272b !important;
+  color: white !important;
+}
+
 .slick-slider {
   position: relative !important;
 }
@@ -791,6 +806,8 @@ body iconify-icon {
   display: flex;
   flex-direction: column;
   text-align: right;
+  background-color: transparent !important;
+  color: black !important;
 }
 .wrapper-admin-panel header .right .user .info .name {
   font-size: 1.3rem;
@@ -836,6 +853,7 @@ body iconify-icon {
   gap: 1rem;
   padding: 2em 0;
   padding-top: 0;
+  padding-bottom: 20rem;
 }
 .wrapper-admin-panel main h1 {
   font-size: 1.5rem;
@@ -928,12 +946,13 @@ body iconify-icon {
   flex-direction: row;
   flex-wrap: wrap;
   direction: rtl;
+  align-items: center;
   margin-top: 1rem;
   border-radius: 0.5rem;
-  padding: 3em;
+  padding: 5em 3em;
   background-color: #286090;
   color: white;
-  gap: 3rem;
+  gap: 4rem;
   grid-row-gap: 2rem;
   justify-content: start;
 }
@@ -970,10 +989,19 @@ body iconify-icon {
   gap: 1rem;
 }
 .wrapper-admin-panel main form .form-group label span {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: 12ch;
   font-weight: bold;
+  display: flex;
+  gap: 0.5rem;
+}
+.wrapper-admin-panel main form .form-group label input {
+  opacity: 0.3;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 0.5rem 0.1rem transparent;
+}
+.wrapper-admin-panel main form .form-group label input:focus {
+  opacity: 1;
+  box-shadow: 0 0 0.5rem 0.1rem white;
 }
 .wrapper-admin-panel main form .form-group label input[type=file] {
   display: none;
@@ -1005,6 +1033,72 @@ body iconify-icon {
 .wrapper-admin-panel main form .form-group label small:hover {
   background-color: white;
   color: black;
+}
+.wrapper-admin-panel main .posts-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+  gap: 2rem;
+}
+.wrapper-admin-panel main .posts-body img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 1s ease;
+  border-radius: 0.5rem;
+}
+.wrapper-admin-panel main .posts-body .card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2em;
+  box-shadow: 0.3rem 0.3rem 0.5rem 0.05rem rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.wrapper-admin-panel main .posts-body .card:hover .card-header img {
+  transform: scale(1.1);
+}
+.wrapper-admin-panel main .posts-body .card:hover .card-body {
+  max-height: 20rem;
+}
+.wrapper-admin-panel main .posts-body .card .card-body {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  gap: 0.5rem;
+  transition: all 0.7s ease-out !important;
+  max-height: 4rem;
+  overflow: hidden;
+}
+.wrapper-admin-panel main .posts-body .card .card-body .row {
+  display: flex;
+  gap: 0.5rem;
+}
+.wrapper-admin-panel main .posts-body .card .card-body .row label {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  width: 7ch;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+.wrapper-admin-panel main .posts-body .card .card-body .row p {
+  font-weight: bold;
+}
+.wrapper-admin-panel main .posts-body .card .card-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+}
+.wrapper-admin-panel main .posts-body .card .card-buttons a {
+  font-size: 0.8rem;
+  border-radius: 0.2rem;
+  padding: 0.3em 1em;
 }
 .wrapper-admin-panel .side-bar {
   margin: 2em 2rem 2rem 1rem;

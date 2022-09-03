@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <title>پنل مدریت</title>
+</head>
+
+<body>
+
+    <div class="wrapper-admin-panel">
+        <header>
+            <div class="left">
+                <a class="exit" href="#">
+                    خروج
+                    <iconify-icon icon="ion:exit-sharp"></iconify-icon>
+                </a>
+                <a class="main-page" href="#">
+                    صفحه اصلی
+                    <iconify-icon icon="bx:home-smile"></iconify-icon>
+                </a>
+            </div>
+            <div class="right">
+                <div class="user">
+                    <img src="/images/admin-panel/1.webp" alt="">
+                    <div class="info">
+                        <div class="name">علی سیاهی</div>
+                        <div class="status">مدیر</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="post-create">
+                <h1>ایجاد پست </h1>
+                <form action="#" method="get" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>
+                            <span>نام </span>
+                            <input type="text" name="name">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>قیمت </span>
+                            <input type="text" name="price">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>سایز </span>
+                            <input type="text" name="size">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>قد </span>
+                            <input type="text" name="height">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>آستین </span>
+                            <input type="text" name="shape">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>دسته بندی </span>
+                            <input type="text" name="category">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>برند </span>
+                            <input type="text" name="brand">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>عکس نمایشی : </span>
+                            <img id="image-element" src="/images/admin-panel/1.webp">
+                            <input id="image-input" type="file" name="image" accept="image/*">
+                            <small>
+                                <iconify-icon icon="bxs:image-add"></iconify-icon>
+                                تغییر عکس
+                            </small>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button class="success">ثبت</button>
+                        <a class="danger" href="#">انصراف</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <aside class="side-bar">
+            <h1>
+                داشبورد مدیر
+                <iconify-icon icon="ci:dashboard"></iconify-icon>
+
+            </h1>
+            <ul>
+                <li><a href="#">کاربران</a></li>
+                <li><a  href="#">دسته بندی ها</a></li>
+                <li><a class="selected" href="#">پست ها</a></li>
+                <li><a href="#">محصول منتخب امروز</a></li>
+                <li><a href="#">کاربران</a></li>
+                <li><a href="#">کاربران</a></li>
+            </ul>
+
+        </aside>
+    </div>
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+
+
+    <script src="/js/admin-panel/category-create.js"></script>
+
+
+
+</body>
+
+
+</html>

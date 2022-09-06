@@ -449,39 +449,117 @@ body {
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        .parallax-window {
-            height: 40rem;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+
+        .slick-slider {
+            position: relative !important;
         }
-        .title {
+        .slick-arrow {
+            font-size: 3em;
+            width: 4rem;
+            height: 4rem;
+            z-index: 1;
+            position: absolute;
+            
+            cursor: pointer;
+            &:first-child {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                left: 1rem;
+                background-color: white;
+                border-radius: 50%;
+            }
+            &:last-child {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                right: 1rem;
+                background-color: white;
+                border-radius: 50%;
+
+            }
+        }
+
+        .slide {
+            position: relative;
+            &:hover {
+                .slide-body {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        }
+        .slide-header {
+            img {
+                width: 100%;
+                height: 40rem;
+                border-radius: 1rem;
+                object-fit: cover;
+            }
+        }
+
+        .slide-body {
             position: absolute;
             width: 24rem;
-            top: 0;
-            background-color: rgb(255, 255, 255, 1);
+            bottom: 0;
+            left: 8%;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-end;
+            justify-content: start;
             flex-direction: column;
-            padding: 2em;
-            transform: translateY(100%);
-            animation: slidesAnimation 1s forwards;
             gap: 1rem;
-            opacity: 0;
-            height: 100%;
-            .title-header {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 1rem 1rem 0 0;
+            border: rgba(0, 0, 0, 0.1) 0.1rem solid;
+            box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+            border-bottom: none;
+            backdrop-filter: blur(1);
+            color: white;
+            padding: 2em;
+            background-color: rgba(255, 255, 255, 1);
+            color: black;
+            transition: all 0.7s ease;
+            transform: translateY(60%);
+            opacity: 0.7;
+
+            .category {
+                align-self: flex-end;
+                a {
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    padding: 0.2em 1em;
+                    border-radius: 100rem;
+                    color: white;
+                }
+            }
+            .header {
                 font-size: 2rem;
                 font-weight: bold;
             }
-            .title-body {
-                padding: 2em;
+            .body {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
                 text-align: right;
+                margin-top: 2rem;
+                margin: 0 -2em;
+                padding: 2em;
+                max-height: 10rem;
+                overflow: auto;
+                .category {
+                    background-color: $color-2;
+                    width: max-content;
+                }
             }
-            .title-buttons {
+            .buttons {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 2em;
                 gap: 1rem;
+                width: 100%;
+                margin-top: 2rem;
+
                 a {
                     display: flex;
                     flex-direction: row;
@@ -489,24 +567,31 @@ body {
                     justify-content: center;
                     min-width: 15ch;
                     gap: 0.5rem;
+                    margin: 0;
+                    transition: all 0.5s ease;
+                    border-radius: 0.3rem !important;
                 }
                 .shopping-cart {
-                    background-color: $color-3;
+                    border: 0.1rem white solid;
                     color: white;
                     padding: 0.4em 1em;
                     border-radius: 0.2rem;
+                    &:hover {
+                        background-color: $color-success;
+                        color: white;
+                    }
                 }
                 .add-to-favoriote {
-                    background-color: red;
+                    border: 0.1rem white solid;
                     color: white;
                     padding: 0.4em 1em;
                     border-radius: 0.2rem;
+                    &:hover {
+                        background-color: $color-danger;
+                        color: white;
+                    }
                 }
             }
-        }
-
-        .slide {
-            position: relative;
         }
     }
 
@@ -606,7 +691,8 @@ body {
         content: "12";
     }
 
-    .recent-products,.category-posts {
+    .recent-products,
+    .category-posts {
         margin-top: 3rem;
         padding: 2em;
         background-color: white;
@@ -1329,7 +1415,6 @@ body {
             }
         }
     }
-   
 
     footer {
         display: flex;
@@ -1807,10 +1892,10 @@ body {
 
 @keyframes slidesAnimation {
     from {
-        transform: translateY(100%);
+        transform: translateX(-100%);
     }
     to {
-        transform: translateY(0%);
+        transform: translateX(0%);
         opacity: 1;
     }
 }

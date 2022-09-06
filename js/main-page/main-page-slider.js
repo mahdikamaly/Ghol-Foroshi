@@ -15,3 +15,14 @@ $('.category-posts-body').slick({
     prevArrow: '<iconify-icon icon="akar-icons:chevron-left"></iconify-icon>',
     nextArrow: '<iconify-icon icon="akar-icons:chevron-right"></iconify-icon>',
 });
+
+
+$('.todays-product').slick({
+    dots: false,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear' ,
+    prevArrow: '<iconify-icon icon="akar-icons:chevron-left"></iconify-icon>',
+    nextArrow: '<iconify-icon icon="akar-icons:chevron-right"></iconify-icon>',
+  });

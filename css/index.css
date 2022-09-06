@@ -616,7 +616,6 @@ body iconify-icon {
   position: absolute;
   bottom: 10rem;
   left: 0;
-  transform: translateX(-100%);
   opacity: 0;
   width: 100%;
   transition: all 1s ease;
@@ -627,13 +626,15 @@ body iconify-icon {
   padding: 0 0.3em;
 }
 .wrapper .top-sales .top-sales-body .card .card-buttons a {
-  width: 50%;
+  width: 13ch;
   font-size: 0.9rem;
-  padding: 0.3em 0.5em;
+  padding: 0.3em 0.4em;
   display: flex;
   align-items: center;
+  flex-direction: row !important;
   justify-content: center;
   gap: 0.5rem;
+  border-radius: 0.3rem;
 }
 .wrapper .top-sales .top-sales-body .card .card-buttons .shopping-cart {
   background-color: #428d42;
